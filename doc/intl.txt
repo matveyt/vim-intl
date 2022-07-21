@@ -1,0 +1,36 @@
+*intl.txt*	Few missing i18n bits
+
+*MAPPINGS*						       *intl-mappings*
+
+All mappings are for |Insert-mode|. You are supposed to have |'keymap'| option
+set before using them.
+
+<C-B>       changes the language of the last |WORD| typed,
+            also toggles the keymap in use |i_Ctrl-^|
+<C-L>       same for the change being typed |'[|
+<C-S>       same for the last |sentence| typed
+
+<plug>lmap; This is a generic |<Plug>|-mapping. Define your own mappings using
+            it in order to override the defaults above. You have to delete the
+            text into unnamed register |quotequote| before calling it.
+            NOTE that only single letter |language-mapping| supported!
+
+Here is how the default mappings are defined >
+
+  inoremap <unique><C-B> <C-\><C-O>dB<plug>lmap;
+  inoremap <unique><C-L> <C-\><C-O>d`[<plug>lmap;<C-G>u
+  inoremap <unique><C-S> <C-\><C-O>d(<plug>lmap;
+<
+SPELL FILE MISSING				       *intl-SpellFileMissing*
+
+The plugin is able to download missing spell files from the net. You don't
+need standard |spellfile.vim| or |netrw| plugin anymore. Both https://curl.se
+and https://www.gnu.org/software/wget can be used. The variable
+`g:spellfile_URL` is also supported.
+
+GETTEXT						    *Gettext()* *intl-gettext*
+
+There is also a small compatibility function named `Gettext()`. It calls
+|gettext()| if it's available. Otherwise, it returns the argument unmodified.
+
+ vim:tw=78:ts=8:ft=help:norl:
