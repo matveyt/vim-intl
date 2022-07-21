@@ -48,7 +48,8 @@ if !hasmapto('<plug>lmap;', 'i')
     inoremap <unique><C-S> <C-\><C-O>d(<plug>lmap;
 endif
 
-" download missing spell files (disables spellfile plugin)
+" download missing spell files (disable spellfile.vim plugin)
+unlet! g:loaded_spellfile_plugin
 autocmd! SpellFileMissing * execute '!'
     \   executable('curl') ? 'curl -OO --create-dirs --output-dir' :
     \   executable('wget') ? 'wget -NP' :
