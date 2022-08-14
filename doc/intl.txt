@@ -28,9 +28,4 @@ need standard |spellfile.vim| or |netrw| plugin anymore. Both https://curl.se
 and https://www.gnu.org/software/wget can be used. The variable
 `g:spellfile_URL` is also supported.
 
-GETTEXT						    *Gettext()* *intl-gettext*
-
-There is also a small compatibility function named `Gettext()`. It calls
-|gettext()| if it's available. Otherwise, it returns the argument unmodified.
-
  vim:tw=78:ts=8:ft=help:norl:

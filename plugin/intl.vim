@@ -1,5 +1,5 @@
 " Vim plugin to add few missing i18n bits
-" Last Change:  2022 Jul 21
+" Last Change:  2022 Aug 14
 " License:      VIM License
 " URL:          https://github.com/matveyt/vim-intl
 
@@ -59,9 +59,6 @@ autocmd! SpellFileMissing * execute '!'
     \   printf('%s/%s.%s.{spl,sug}',
     \       get(g:, 'spellfile_URL', 'https://ftp.nluug.nl/pub/vim/runtime/spell'),
     \       '<amatch>', &encoding)
-
-" dumb compat. function
-let Gettext = exists('*gettext') ? function('gettext') : {s -> s}
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
